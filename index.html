@@ -109,7 +109,13 @@
 
   .wrap { max-width: var(--shell); margin: 0 auto; padding: 0 var(--pad); }
   .page { padding: clamp(3.5rem, 8vw, 6rem) 0; }
-  .page + .page { border-top: 1px solid var(--line); }
+  .page + .page { border-top: 2px solid var(--line-2); position: relative; }
+  .page + .page::before {
+    content: ""; position: absolute; top: -2px; height: 2px;
+    left: max(var(--pad), calc((100% - var(--shell)) / 2 + var(--pad)));
+    width: clamp(56px, 9vw, 120px);
+    background: var(--blue);
+  }
   #home { padding: 0 0 clamp(2rem, 5vw, 3.5rem); border: 0; }
   #home > .wrap:first-child { padding: 0; }
   .quick { margin-top: clamp(2rem, 4vw, 3rem); }
@@ -304,8 +310,12 @@
 
   /* ================= projects band ================= */
 
-  .band { background: var(--band); color: var(--band-fg); border: 0; }
-  .band + .band { border-top: 1px solid var(--band-line); }
+  .band { background: var(--band); color: var(--band-fg); }
+  .page.band { border-top: 2px solid var(--band-line); }
+  .page.band::before { background: var(--blue-soft); }
+
+  /* achievements sits between the two charcoal bands in its own navy */
+  .band-alt { --band: #1A3252; --band-line: #33507A; }
   .band .award { border-top: 1px solid var(--band-line); }
   .band .award .y { color: var(--blue-soft); }
   .band .award strong { color: var(--band-fg); }
@@ -343,7 +353,7 @@
   }
   .proj:hover .chip { border-color: var(--blue-soft); color: var(--blue-soft); }
 
-  /* ================= awards ================= */
+  /* ================= achievements ================= */
 
   .award {
     display: grid; grid-template-columns: 5.75rem minmax(0, 1fr);
@@ -498,7 +508,7 @@
       <a href="#education">Education</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
-      <a href="#awards">Awards</a>
+      <a href="#achievements">Achievements</a>
       <a href="#contact">Contact</a>
     </nav>
     <a class="nav-cta" href="#contact">Get in touch</a>
@@ -544,9 +554,9 @@
         <h3>Projects</h3>
         <p>A student company, a trading system, an outreach system.</p>
       </a>
-      <a class="qcard" href="#awards">
+      <a class="qcard" href="#achievements">
         <span class="n">04</span>
-        <h3>Awards</h3>
+        <h3>Achievements</h3>
         <p>Placings, certifications and the piano.</p>
       </a>
     </div>
@@ -806,11 +816,11 @@
   </div>
 </section>
 
-<!-- ===================== AWARDS ===================== -->
-<section class="page band" id="awards">
+<!-- ===================== ACHIEVEMENTS ===================== -->
+<section class="page band band-alt" id="achievements">
   <div class="wrap">
     <div class="pagehead">
-      <p class="kicker">Awards, certifications &amp; activities</p>
+      <p class="kicker">Achievements &amp; certifications</p>
       <h2>Recognition and credentials</h2>
     </div>
 
