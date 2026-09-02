@@ -455,6 +455,8 @@
     nav.pages {
       width: 100%; flex-wrap: nowrap; overflow-x: auto;
       scrollbar-width: none; -webkit-overflow-scrolling: touch;
+      -webkit-mask-image: linear-gradient(to right, #000 84%, transparent 100%);
+      mask-image: linear-gradient(to right, #000 84%, transparent 100%);
     }
     nav.pages::-webkit-scrollbar { display: none; }
     nav.pages a { padding: 0.3rem 0.55rem 0.35rem 0; font-size: 0.63rem; }
@@ -798,7 +800,7 @@
     <div class="proj">
       <div class="proj-top">
         <h3>Client outreach system</h3>
-        <span class="proj-kind">Prudential · built independently</span>
+        <span class="proj-kind">Prudential · internal</span>
       </div>
       <p class="role">Designed and built independently · 2026</p>
       <p>Given an assigned contact base, I built a structured outreach process instead of working the list by feel: segmented call scripts, a set of opening questions that start from the client's situation rather than the product, an objection-handling map, and a follow-up cadence.</p>
