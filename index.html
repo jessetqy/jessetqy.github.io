@@ -1,3 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Teoh Qi Yan Jesse — finance undergraduate at Swinburne University of Technology and licensed wealth planner, based in Penang, Malaysia. Seeking internships in property and financial services.">
+<meta name="author" content="Teoh Qi Yan Jesse">
+<meta property="og:title" content="Jesse Teoh — Finance Portfolio">
+<meta property="og:description" content="Finance undergraduate at Swinburne and licensed wealth planner, based in Penang.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230A0B0B'/%3E%3Crect x='11' y='11' width='10' height='10' fill='%23C8A96A' transform='rotate(45 16 16)'/%3E%3C/svg%3E">
 <title>Jesse Teoh — Finance Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -435,10 +446,49 @@
     }
   }
 
+
+  /* ---------- phones ---------- */
+  @media (max-width: 860px) {
+    .head-inner { padding: 0.55rem var(--pad) 0.5rem; gap: 0.4rem; }
+    .brand { font-size: 0.92rem; }
+    .head-right { display: none; }
+    nav.pages {
+      width: 100%; flex-wrap: nowrap; overflow-x: auto;
+      scrollbar-width: none; -webkit-overflow-scrolling: touch;
+    }
+    nav.pages::-webkit-scrollbar { display: none; }
+    nav.pages a { padding: 0.3rem 0.55rem 0.35rem 0; font-size: 0.63rem; }
+    nav.pages a::after { left: 0; right: 0.55rem; }
+  }
+
+  @media (max-width: 620px) {
+    .hero {
+      display: block; min-height: 0;
+      padding: 0 0 clamp(3rem, 9vw, 4.5rem);
+    }
+    .hero-media {
+      position: relative; inset: auto; width: 100%;
+      height: 44vh; min-height: 250px; max-height: 380px;
+    }
+    .hero-media img { object-position: 50% 12%; }
+    .hero-media::after {
+      background: linear-gradient(to bottom,
+        color-mix(in srgb, var(--bg) 45%, transparent) 0%,
+        transparent 28%,
+        transparent 52%,
+        var(--bg) 96%);
+    }
+    .hero-inner { margin-top: -1.5rem; }
+    .hero h1 { font-size: clamp(2.1rem, 10vw, 2.8rem); }
+    .cue-wrap { position: static; margin-top: 2.25rem; }
+    .cue-wrap .wrap { padding: 0 var(--pad); }
+  }
+
   :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 </style>
 <noscript><style>.curtain { display: none; } .rv { opacity: 1 !important; transform: none !important; }</style></noscript>
-
+</head>
+<body>
 <div class="curtain" id="curtain">
   <div class="mark">Jesse Teoh</div>
   <div class="bar"><i></i></div>
@@ -959,3 +1009,6 @@
   setInterval(tickClock, 15000);
 })();
 </script>
+
+</body>
+</html>
