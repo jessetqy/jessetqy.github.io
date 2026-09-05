@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Teoh Qi Yan Jesse — finance undergraduate at Swinburne University of Technology and licensed wealth planner, based in Penang, Malaysia. Seeking internships in property and financial services.">
+<meta name="description" content="Teoh Qi Yan Jesse — finance undergraduate at Swinburne University of Technology and licensed wealth planner, based in Penang, Malaysia.">
 <meta name="author" content="Teoh Qi Yan Jesse">
 <meta property="og:title" content="Jesse Teoh — Finance Portfolio">
 <meta property="og:description" content="Finance undergraduate at Swinburne and licensed wealth planner, based in Penang.">
@@ -508,6 +508,36 @@
   }
 
   :focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+
+  /* ============ trading chart ============ */
+  .tchart {
+    margin: 1.35rem 0 1.5rem; padding: 0;
+    border: 1px solid var(--band-line); background: rgba(255,255,255,0.022);
+  }
+  .tchart-head {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem; flex-wrap: wrap;
+    padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--band-line);
+  }
+  .tchart-sym {
+    font-size: 0.64rem; letter-spacing: 0.17em; text-transform: uppercase;
+    font-weight: 700; color: var(--band-2);
+  }
+  .tchart-legend {
+    display: flex; align-items: center; gap: 0.9rem;
+    font-size: 0.64rem; letter-spacing: 0.07em; color: rgba(242,245,249,0.5);
+  }
+  .tchart-legend span { display: inline-flex; align-items: center; gap: 0.34rem; }
+  .tchart-legend i { width: 13px; height: 2px; display: block; }
+  .tchart-legend i.k-e { background: #7B9BCB; }
+  .tchart-legend i.k-s { background: #C4685F; }
+  .tchart-legend i.k-t { background: #4FB08A; }
+  .tchart svg { display: block; width: 100%; height: auto; }
+  @media (max-width: 760px) { .tchart .lvl-label { display: none; } }
+  .tchart figcaption {
+    padding: 0.55rem 0.9rem 0.7rem; border-top: 1px solid var(--band-line);
+    font-size: 0.7rem; line-height: 1.5; color: rgba(242,245,249,0.46);
+  }
 </style>
 <noscript><style>.curtain { display: none; } .rv { opacity: 1 !important; transform: none !important; }</style></noscript>
 </head>
@@ -551,7 +581,6 @@
     </div>
     <div class="hero-sheen" aria-hidden="true"></div>
     <div class="wrap hero-inner">
-      <span class="status"><span class="dot"></span> Open to internships</span>
       <h1>Finance, and the <em>people</em> it's for.</h1>
       <p class="lede">I'm Jesse — a Finance undergraduate at Swinburne University of Technology and a licensed wealth planner, with three years of client-facing work behind me before the degree is finished.</p>
       <div class="cta">
@@ -596,11 +625,11 @@
       <p>Finance undergraduate at Swinburne University of Technology, studying in Penang, licensed to advise on risk and insurance before graduating.</p>
     </div>
 
-    <p>Most finance students arrive at an interview with coursework. I arrived at university with a sales record — broadband sold on doorsteps, packages sold across a retail counter, and now financial planning discussed across a table. That work taught me the part a syllabus doesn't cover: how a person actually decides.</p>
+    <p>Most finance students arrive at an interview with coursework. I arrived at university with a sales record — broadband sold on doorsteps, and now financial planning discussed across a table. That work taught me the part a syllabus doesn't cover: how a person actually decides.</p>
 
     <p>The other half is quantitative. I've traded across indices, metals, crypto and equities for about two years, and I've spent the last stretch turning what I learned into a rules-based system that runs without me watching it.</p>
 
-    <p>I'm not chasing a job title. I'm building toward owning something — which is why I'd rather learn how deals actually close than watch them from a spreadsheet. Property and financial services are the two fields where that's most directly true, and they're where I'm looking.</p>
+    <p>I'm not chasing a job title. I'm building toward owning something — which is why I'd rather learn how deals actually close than watch them from a spreadsheet.</p>
 
     <div class="grid-int">
       <div class="int">
@@ -716,8 +745,8 @@
         <h3>Sales &amp; Service Associate</h3>
         <p class="org"><strong>Maxis Broadband Sdn Bhd</strong> · Penang · part-time, concurrent with full-time study</p>
         <ul>
-          <li>Sold fibre broadband and mobile packages in a target-driven retail environment.</li>
-          <li>Qualified customer needs at the counter, presented package comparisons, and handled objections through to signed contract.</li>
+          <li>Sold fibre broadband and mobile packages in a target-driven sales environment.</li>
+          <li>Qualified customer needs on the spot, presented package comparisons, and handled objections through to signed contract.</li>
           <li>Carried after-sales support for accounts opened, including billing queries and plan changes.</li>
         </ul>
       </div>
@@ -787,7 +816,6 @@
 <section class="page band" id="projects">
   <div class="wrap">
     <div class="pagehead">
-      <p class="kicker">Selected work</p>
       <h2>Three things I built</h2>
       <p>A student company run to a real profit and loss, a trading system, and a working sales process.</p>
     </div>
@@ -813,6 +841,18 @@
         <span class="proj-kind">Ongoing · MetaTrader 5</span>
       </div>
       <p class="role">Strategy design and validation · 2024–present</p>
+      <figure class="tchart" data-tchart>
+        <div class="tchart-head">
+          <span class="tchart-sym">Rule sequence · schematic</span>
+          <span class="tchart-legend">
+            <span><i class="k-e"></i>entry</span>
+            <span><i class="k-s"></i>stop</span>
+            <span><i class="k-t"></i>target</span>
+          </span>
+        </div>
+        <svg viewBox="0 0 720 250" role="img" aria-label="Illustration of the system waiting through a range, taking an entry on a breakout, and holding a fixed stop and target."></svg>
+        <figcaption>An illustration of how the rules fire, not a backtest or a live result. The system waits through the range, takes the break, and sets the stop and target before the trade is on.</figcaption>
+      </figure>
       <p>After about two years of discretionary trading, I set about turning my approach into a system that executes without me. It runs as an Expert Advisor on MetaTrader 5, with the entry logic and risk controls specified by me and implemented in MQL5 with AI assistance — I read and modify that code to check the implementation matches the strategy.</p>
       <p>It has been extensively backtested and runs on a VPS. It is not yet live-funded, and I'd rather report a backtest honestly than a live result I haven't produced.</p>
       <dl class="spec">
@@ -911,9 +951,7 @@
 <section class="page band" id="contact">
   <div class="wrap">
     <div class="pagehead">
-      <p class="kicker">Contact</p>
-      <h2>Let's talk</h2>
-      <p>I'm looking for internships in property and financial services, in Singapore or Kuala Lumpur. If you're hiring, or you think I should be looking somewhere I'm not, I'd like to hear from you.</p>
+      <h2>Contact</h2>
     </div>
 
     <dl class="cbox">
@@ -928,10 +966,6 @@
       <div class="cline">
         <dt>LinkedIn</dt>
         <dd>To be added</dd>
-      </div>
-      <div class="cline">
-        <dt>Available</dt>
-        <dd>Semester breaks &amp; from Dec 2027</dd>
       </div>
     </dl>
 
@@ -1051,5 +1085,128 @@
 })();
 </script>
 
+
+<script>
+/* ---------- schematic trading chart ---------- */
+(function () {
+  var fig = document.querySelector('[data-tchart]');
+  if (!fig) return;
+  var svg = fig.querySelector('svg');
+  var NS = 'http://www.w3.org/2000/svg';
+  var narrow = window.innerWidth < 760;
+  var W = 720, H = 250, L = 10, R = narrow ? 14 : 66, T = 16, B = 24;
+  var N = 56, SIG = 30;
+
+  var seed = 20260905;
+  function rnd() { seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; }
+
+  var bars = [], px = 100, i;
+  for (i = 0; i < N; i++) {
+    var trend = i < SIG ? 0 : 0.42;
+    var vol = i < SIG ? 0.95 : 1.15;
+    var o = px, c = o + trend + (rnd() - 0.5) * vol * 1.9;
+    if (i < SIG) { if (c > 102.4) c = 102.4 - rnd() * 0.5; if (c < 98.2) c = 98.2 + rnd() * 0.5; }
+    var hi = Math.max(o, c) + rnd() * vol * 0.8;
+    var lo = Math.min(o, c) - rnd() * vol * 0.8;
+    bars.push({ o: o, c: c, h: hi, l: lo }); px = c;
+  }
+
+  var entry = bars[SIG].c, risk = 2.1;
+  var stop = entry - risk, target = entry + risk * 2;
+
+  var lo = Infinity, hi = -Infinity;
+  for (i = 0; i < N; i++) { if (bars[i].l < lo) lo = bars[i].l; if (bars[i].h > hi) hi = bars[i].h; }
+  lo = Math.min(lo, stop) - 0.7; hi = Math.max(hi, target) + 0.7;
+
+  var iw = W - L - R, ih = H - T - B, step = iw / N, cw = Math.max(3, step * 0.56);
+  function X(k) { return L + step * (k + 0.5); }
+  function Y(v) { return T + ih * (1 - (v - lo) / (hi - lo)); }
+
+  function el(n, a) { var e = document.createElementNS(NS, n); for (var k in a) e.setAttribute(k, a[k]); return e; }
+
+  // static layer: grid
+  var g = el('g', { 'stroke': 'rgba(242,245,249,0.07)', 'stroke-width': '1' });
+  for (i = 0; i <= 4; i++) { var y = T + ih * i / 4; g.appendChild(el('line', { x1: L, y1: y, x2: L + iw, y2: y })); }
+  svg.appendChild(g);
+
+  var zones = el('g', { opacity: '0' });
+  zones.appendChild(el('rect', { x: L, y: Y(target), width: iw, height: Math.abs(Y(entry) - Y(target)), fill: 'rgba(79,176,138,0.10)' }));
+  zones.appendChild(el('rect', { x: L, y: Y(entry), width: iw, height: Math.abs(Y(stop) - Y(entry)), fill: 'rgba(196,104,95,0.10)' }));
+  function lvl(v, col, label) {
+    var gg = el('g', {});
+    gg.appendChild(el('line', { x1: L, y1: Y(v), x2: L + iw, y2: Y(v), stroke: col, 'stroke-width': '1', 'stroke-dasharray': '4 4' }));
+    var tx = el('text', { 'class': 'lvl-label', x: L + iw + 7, y: Y(v) + 3.5, fill: col, 'font-size': '11', 'font-family': 'ui-monospace,SFMono-Regular,Menlo,monospace', 'letter-spacing': '0.06em' });
+    tx.textContent = label; gg.appendChild(tx); return gg;
+  }
+  zones.appendChild(lvl(target, '#4FB08A', 'TARGET'));
+  zones.appendChild(lvl(entry, '#7B9BCB', 'ENTRY'));
+  zones.appendChild(lvl(stop, '#C4685F', 'STOP'));
+  svg.appendChild(zones);
+
+  var candles = el('g', {}); svg.appendChild(candles);
+  var marker = el('g', { opacity: '0' });
+  marker.appendChild(el('circle', { cx: X(SIG), cy: Y(entry), r: '4', fill: '#7B9BCB' }));
+  marker.appendChild(el('circle', { cx: X(SIG), cy: Y(entry), r: '8', fill: 'none', stroke: '#7B9BCB', 'stroke-width': '1', opacity: '0.5' }));
+  svg.appendChild(marker);
+
+  function drawBar(k) {
+    var b = bars[k], up = b.c >= b.o, col = up ? '#4FB08A' : '#C4685F';
+    var gg = el('g', {});
+    gg.appendChild(el('line', { x1: X(k), y1: Y(b.h), x2: X(k), y2: Y(b.l), stroke: col, 'stroke-width': '1', opacity: '0.85' }));
+    var top = Y(Math.max(b.o, b.c)), hgt = Math.max(1.2, Math.abs(Y(b.o) - Y(b.c)));
+    gg.appendChild(el('rect', { x: X(k) - cw / 2, y: top, width: cw, height: hgt, fill: col, opacity: up ? '0.95' : '0.8' }));
+    candles.appendChild(gg);
+  }
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) {
+    for (i = 0; i < N; i++) drawBar(i);
+    zones.setAttribute('opacity', '1'); marker.setAttribute('opacity', '1');
+    return;
+  }
+
+  var idx = 0, last = 0, phase = 'draw', hold = 0, raf = null, running = false;
+
+  function reset() {
+    while (candles.firstChild) candles.removeChild(candles.firstChild);
+    idx = 0; phase = 'draw'; hold = 0;
+    zones.setAttribute('opacity', '0'); marker.setAttribute('opacity', '0');
+    fig.style.opacity = '1';
+  }
+
+  function tick(ts) {
+    if (!running) return;
+    if (!last) last = ts;
+    var dt = ts - last;
+    if (phase === 'draw') {
+      if (dt > 52) {
+        last = ts;
+        if (idx < N) {
+          drawBar(idx);
+          if (idx === SIG) { zones.setAttribute('opacity', '1'); marker.setAttribute('opacity', '1'); }
+          idx++;
+        } else { phase = 'hold'; hold = ts; }
+      }
+    } else if (phase === 'hold') {
+      if (ts - hold > 2600) { phase = 'fade'; hold = ts; }
+    } else {
+      var p = (ts - hold) / 700;
+      fig.style.opacity = String(Math.max(0, 1 - p));
+      if (p >= 1) { reset(); last = ts; }
+    }
+    raf = requestAnimationFrame(tick);
+  }
+
+  function start() { if (running) return; running = true; last = 0; raf = requestAnimationFrame(tick); }
+  function stop_() { running = false; if (raf) cancelAnimationFrame(raf); raf = null; }
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) { e.isIntersecting ? start() : stop_(); });
+    }, { threshold: 0.25 }).observe(fig);
+  } else { start(); }
+  document.addEventListener('visibilitychange', function () { document.hidden ? stop_() : start(); });
+})();
+</script>
 </body>
 </html>
