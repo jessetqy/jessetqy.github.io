@@ -70,7 +70,7 @@
   }
   .brand {
     font-family: var(--f-disp); font-weight: 600;
-    font-size: 1.06rem; line-height: 1.1; letter-spacing: -0.005em;
+    font-size: 0.95rem; line-height: 1.1; letter-spacing: 0.1em; text-transform: uppercase;
     color: var(--ink); text-decoration: none; white-space: nowrap;
   }
   .brand small {
@@ -159,7 +159,7 @@
   .hero {
     position: relative;
     display: flex; align-items: flex-end;
-    min-height: clamp(520px, 80vh, 780px);
+    min-height: clamp(430px, 64vh, 600px);
     overflow: hidden;
     background: #0B1119;
   }
@@ -196,8 +196,8 @@
   }
   .hero-inner {
     position: relative; z-index: 2; width: 100%;
-    padding-top: clamp(4rem, 12vw, 8rem);
-    padding-bottom: clamp(2.5rem, 6vw, 4.5rem);
+    padding-top: clamp(3rem, 8vw, 5.5rem);
+    padding-bottom: clamp(2.25rem, 5vw, 3.5rem);
   }
   .hero-inner > * { max-width: 40rem; }
 
@@ -219,18 +219,26 @@
     }
   }
   .hero h1 {
-    font-size: clamp(2.4rem, 6vw, 4.3rem);
-    line-height: 1.02; letter-spacing: -0.03em; margin-bottom: 1.15rem;
-    color: #FFFFFF;
-    text-shadow: 0 1px 30px rgba(0,0,0,0.35);
+    font-size: clamp(2rem, 4.2vw, 3.15rem);
+    line-height: 1.08; letter-spacing: -0.026em; margin-bottom: 1rem;
+    color: #FFFFFF; max-width: 16ch;
   }
   .hero h1 em { font-style: italic; color: #A9C3E6; }
   .hero .lede {
-    font-size: clamp(1.02rem, 1.7vw, 1.16rem);
-    line-height: 1.6; color: rgba(255,255,255,0.86);
-    max-width: 42ch; margin-bottom: 1.9rem;
+    font-size: clamp(0.97rem, 1.35vw, 1.06rem);
+    line-height: 1.62; color: rgba(255,255,255,0.82);
+    max-width: 46ch; margin-bottom: 1.85rem;
   }
-  .cta { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .cta { display: flex; gap: 1.6rem; flex-wrap: wrap; align-items: center; }
+  .cta .quiet {
+    font-size: 0.82rem; font-weight: 600; letter-spacing: 0.02em;
+    color: rgba(255,255,255,0.9); text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.4); padding-bottom: 2px;
+    transition: border-color 0.22s ease, color 0.22s ease;
+  }
+  .cta .quiet:hover { color: #fff; border-color: #fff; }
+  .btn span { display: inline-block; margin-left: 0.4rem; transition: transform 0.25s ease; }
+  .btn:hover span { transform: translateX(3px); }
   .btn {
     font-size: 0.82rem; font-weight: 600;
     text-decoration: none; padding: 0.75rem 1.35rem;
@@ -550,7 +558,7 @@
 
 <header>
   <div class="head-inner">
-    <a class="brand" href="#home">Teoh Qi Yan Jesse<small>Finance · Penang</small></a>
+    <a class="brand" href="#home">Jesse Teoh<small>Finance · Wealth · People</small></a>
     <nav class="pages" id="nav">
       <a href="#about">About</a>
       <a href="#education">Education</a>
@@ -581,14 +589,13 @@
     </div>
     <div class="hero-sheen" aria-hidden="true"></div>
     <div class="wrap hero-inner">
-      <h1>Finance, and the <em>people</em> it's for.</h1>
-      <p class="lede">I'm Jesse — a Finance undergraduate at Swinburne University of Technology and a licensed wealth planner, with three years of client-facing work behind me before the degree is finished.</p>
+      <h1>Finance is about <em>people</em>.</h1>
+      <p class="lede">I'm Jesse — a Finance undergraduate at Swinburne University of Technology, with three years of client-facing experience alongside my degree.</p>
       <div class="cta">
-        <a class="btn" href="#projects">See the work</a>
-        <a class="btn ghost" href="#contact">Get in touch</a>
+        <a class="btn" href="#projects">Explore my work <span aria-hidden="true">&rarr;</span></a>
+        <a class="quiet" href="#about">About me</a>
       </div>
     </div>
-    <span class="credit">Penang, Malaysia</span>
   </div>
   <div class="wrap">
     <div class="quick">
